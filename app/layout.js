@@ -1,28 +1,26 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
 });
 
 export const metadata = {
-  title: 'Naveed | Full-Stack Developer',
-  description: 'Modern portfolio built with Next.js, Tailwind CSS, and Framer Motion',
-}
+  title: "Kai Ren | Full-Stack Developer",
+  description:
+    "Modern portfolio built with Next.js, Tailwind CSS, and Framer Motion",
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900 text-white font-sans`}
+        className={`${inter.variable} antialiased  bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]`}
       >
-        {children}
+        <Navbar />
+        <div className="pt-20">{children}</div>
       </body>
     </html>
   );
